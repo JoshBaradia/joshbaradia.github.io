@@ -79,9 +79,7 @@ const Contact = () => {
                 <Linkedin className="text-primary" size={20} />
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                    linkedin.com/in/josh-baradia
-                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">https://www.linkedin.com/in/josh-baradia-158637157/</a>
                 </div>
               </div>
               
