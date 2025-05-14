@@ -1,9 +1,6 @@
-
 import React from "react";
-
 const About = () => {
-  return (
-    <section id="about" className="section bg-muted/10">
+  return <section id="about" className="section bg-muted/10">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
         
@@ -22,12 +19,12 @@ const About = () => {
               AI solutions that address real-world challenges and create meaningful impact.
             </p>
             <p className="text-muted-foreground">
-              I'm constantly exploring the intersection of technology and business, seeking opportunities 
-              to apply my skills in organizations driving technological advancement and innovation.
-            </p>
+          </p>
           </div>
           
-          <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="space-y-8 animate-fade-in" style={{
+          animationDelay: "0.2s"
+        }}>
             <h3 className="text-2xl font-semibold text-primary">Education</h3>
             
             <div className="space-y-6">
@@ -35,7 +32,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <h4 className="text-xl font-semibold">Master of Science, Management of Technology</h4>
                 <p className="text-muted-foreground">New York University</p>
-                <p className="text-sm text-muted-foreground">Ongoing</p>
+                <p className="text-sm text-muted-foreground">Fall 2025</p>
               </div>
               
               <div className="relative border-l-2 border-primary pl-6">
@@ -48,8 +45,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
