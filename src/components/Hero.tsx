@@ -50,8 +50,11 @@ const Hero = () => {
               <div className="relative w-64 h-64 md:w-80 md:h-80 animate-fade-in rounded-2xl overflow-hidden border-2 border-primary/20" style={{ animationDelay: "0.3s" }}>
                 <AspectRatio ratio={1/1} className="bg-gradient-to-br from-muted/80 to-muted/20">
                   <Avatar className="w-full h-full rounded-2xl">
-                    {/* Replace with actual image URL when available */}
-                    <AvatarImage src="" alt="Josh Baradia" className="object-cover" />
+                    <AvatarImage 
+                      src="https://drive.google.com/uc?export=view&id=1Yh73DmkHOFX41Nj4V2pnLirB7rSUzK6C" 
+                      alt="Josh Baradia" 
+                      className="object-cover" 
+                    />
                     <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-secondary to-background text-primary">JB</AvatarFallback>
                   </Avatar>
                 </AspectRatio>
