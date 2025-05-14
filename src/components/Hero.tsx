@@ -51,7 +51,7 @@ const Hero = () => {
                 <AspectRatio ratio={1/1} className="bg-gradient-to-br from-muted/80 to-muted/20">
                   <Avatar className="w-full h-full rounded-2xl">
                     <AvatarImage 
-                      src="https://drive.google.com/uc?export=view&id=1Yh73DmkHOFX41Nj4V2pnLirB7rSUzK6C" 
+                      src="https://i.postimg.cc/JnT93DZ9/Josh.png" 
                       alt="Josh Baradia" 
                       className="object-cover" 
                     />
