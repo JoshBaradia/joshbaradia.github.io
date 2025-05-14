@@ -1,6 +1,9 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Hero = () => {
   return (
@@ -8,49 +11,60 @@ const Hero = () => {
       <div className="container mx-auto px-4 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Hero Text Content */}
-          <div className="flex flex-col space-y-6 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-              Hi, I'm <span className="text-primary">Josh Baradia</span>
-            </h1>
+          <div className="flex flex-col space-y-6 animate-fade-in order-2 md:order-1">
+            <div className="space-y-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                Hi, I'm <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400">Josh Baradia</span>
+              </h1>
+              
+              <h2 className="text-xl md:text-2xl font-medium text-muted-foreground">
+                AI Researcher | Technologist | ML Enthusiast
+              </h2>
+            </div>
             
-            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground">
-              AI Researcher | Technologist | ML Enthusiast
-            </h2>
-            
-            <p className="text-lg text-muted-foreground max-w-md">
+            <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
               Engineer and researcher passionate about machine intelligence and innovation. 
               Bridging technology and business to build impactful AI solutions.
             </p>
             
-            <div>
-              <button 
+            <div className="pt-2">
+              <Button 
                 onClick={() => {
                   const projectsSection = document.getElementById("projects");
                   if (projectsSection) {
                     projectsSection.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="flex items-center gap-2 bg-primary hover:bg-primary/80 text-primary-foreground px-6 py-3 rounded-md font-medium transition-all"
+                className="group text-md transition-all duration-300 hover:pr-8"
               >
-                Explore My Work <ArrowRight size={16} />
-              </button>
+                Explore My Work 
+                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" size={18} />
+              </Button>
             </div>
           </div>
           
           {/* Hero Image */}
-          <div className="flex justify-center md:justify-end">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              {/* Replace with actual image URL when available */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background flex items-center justify-center">
-                <span className="text-muted-foreground text-lg">Profile Image</span>
+          <div className="flex justify-center md:justify-end mb-8 md:mb-0 order-1 md:order-2">
+            <div className="relative">
+              <div className="absolute -z-10 blur-[80px] opacity-30 rounded-full w-72 h-72 bg-primary top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 animate-fade-in rounded-2xl overflow-hidden border-2 border-primary/20" style={{ animationDelay: "0.3s" }}>
+                <AspectRatio ratio={1/1} className="bg-gradient-to-br from-muted/80 to-muted/20">
+                  <Avatar className="w-full h-full rounded-2xl">
+                    {/* Replace with actual image URL when available */}
+                    <AvatarImage src="" alt="Josh Baradia" className="object-cover" />
+                    <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-secondary to-background text-primary">JB</AvatarFallback>
+                  </Avatar>
+                </AspectRatio>
               </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary/30 rounded-full blur-xl"></div>
+              <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
             </div>
           </div>
         </div>
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-8">
-        <button
+        <Button
           onClick={() => {
             const aboutSection = document.getElementById("about");
             if (aboutSection) {
@@ -58,7 +72,9 @@ const Hero = () => {
             }
           }}
           aria-label="Scroll down"
-          className="animate-bounce bg-secondary rounded-full p-2"
+          variant="ghost"
+          size="icon"
+          className="animate-bounce rounded-full hover:bg-secondary/50 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -70,12 +86,12 @@ const Hero = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-secondary-foreground"
+            className="text-primary"
           >
             <path d="M12 5v14" />
             <path d="m19 12-7 7-7-7" />
           </svg>
-        </button>
+        </Button>
       </div>
     </section>
   );
