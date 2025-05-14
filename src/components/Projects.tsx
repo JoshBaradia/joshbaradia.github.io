@@ -59,6 +59,7 @@ const Projects = () => {
       description: "Deep learning approach for identifying AI-generated text from various models including GPT, LLaMA, and Mistral. Published at COLING 2025, Abu Dhabi.",
       technologies: ["NLP", "Deep Learning", "LLMs", "Python", "PyTorch"],
       pdfLink: "#", // Replace with actual PDF link
+      imageUrl: "https://i.postimg.cc/pXhVcx0w/A-conceptual-digital-artwork-in-landscape-ratio-illustrating-the-theme-Mirror-Minds-Detecting-LLM.jpg",
       delay: 0
     },
     {
@@ -66,6 +67,7 @@ const Projects = () => {
       description: "Enhanced underwater visuals using UFPN-ESRGAN architecture, improving clarity and color accuracy for underwater photography and research.",
       technologies: ["Computer Vision", "GANs", "Image Enhancement", "TensorFlow"],
       pdfLink: "#", // Replace with actual PDF link
+      imageUrl: "https://i.postimg.cc/PJjKNTmq/results.png",
       delay: 0.1
     },
     {
@@ -73,18 +75,21 @@ const Projects = () => {
       description: "Developed a Hindi news scraper and machine learning classifier to detect fake news in the Hindi language. Published at ICCCNT 2023, IIT-Delhi.",
       technologies: ["NLP", "Web Scraping", "Classification", "Scikit-Learn"],
       pdfLink: "#", // Replace with actual PDF link
+      imageUrl: "https://i.postimg.cc/vmSZQmwW/comparisons.png",
       delay: 0.2
     },
     {
       title: "Keychain Finder",
       description: "ESP8266-based tracking device using GPS technology with Adafruit visualization for locating lost items.",
       technologies: ["IoT", "ESP8266", "GPS", "Embedded Systems"],
+      imageUrl: "https://i.postimg.cc/vmxpV867/Io-T-Based-Smart-Key-Finder.jpg",
       delay: 0.3
     },
     {
       title: "Automated Smart Door Model",
       description: "Home safety system using gas, fire, and ultrasound sensors for enhanced security and automated responses.",
       technologies: ["IoT", "Sensors", "Automation", "Safety Systems"],
+      imageUrl: "https://www.mdpi.com/engines/mdpi/environments/journal/environments/img/environments-logo.png",
       delay: 0.4
     }
   ];
