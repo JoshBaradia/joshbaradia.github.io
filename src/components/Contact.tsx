@@ -1,7 +1,11 @@
 
 import React, { useState } from "react";
 import { Mail, Phone, Linkedin, Instagram, MapPin } from "lucide-react";
+import emailjs from 'emailjs-com';
+import { useToast } from "@/hooks/use-toast";
+
 const Contact = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,26 +13,36 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    success: boolean;
-    message: string;
-  } | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus({
-        success: true,
-        message: "Thank you! Your message has been sent successfully."
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_nwz2gqn',
+        'template_9sv24gm',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        '5A08LW69Rgrsf2sVB'
+      );
+
+      // Show success message
+      toast({
+        title: "Success!",
+        description: "Your message has been sent successfully.",
       });
 
       // Reset form
@@ -38,13 +52,18 @@ const Contact = () => {
         subject: "",
         message: ""
       });
-
-      // Clear status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return <section id="contact" className="section">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Get In Touch</h2>
@@ -106,9 +125,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="animate-fade-in" style={{
-          animationDelay: "0.2s"
-        }}>
+          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
@@ -141,10 +158,6 @@ const Contact = () => {
               <button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/80 text-primary-foreground py-3 px-6 rounded-md font-medium transition-colors disabled:opacity-70">
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-              
-              {submitStatus && <div className={`p-3 rounded-md text-center ${submitStatus.success ? "bg-green-500/10 text-green-500" : "bg-red-500/10 text-red-500"}`}>
-                  {submitStatus.message}
-                </div>}
             </form>
           </div>
         </div>

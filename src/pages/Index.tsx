@@ -9,6 +9,7 @@ import Skills from "../components/Skills";
 import Publications from "../components/Publications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Publications />
       <Contact />
       <Footer />
+      <Toaster />
     </div>
   );
 };
