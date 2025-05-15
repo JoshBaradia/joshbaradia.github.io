@@ -51,7 +51,7 @@ const Hero = () => {
                 </AspectRatio>
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary/30 rounded-full blur-xl"></div>
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
+              
             </div>
           </div>
         </div>
