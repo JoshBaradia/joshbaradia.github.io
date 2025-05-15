@@ -19,10 +19,7 @@ const Hero = () => {
               </h2>
             </div>
             
-            <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
-              Engineer and researcher passionate about machine intelligence and innovation. 
-              Bridging technology and business to build impactful AI solutions.
-            </p>
+            <p className="text-lg text-muted-foreground max-w-md leading-relaxed">Engineer and researcher, passionate about machine intelligence and innovation. Bridging technology and business to build impactful AI solutions.</p>
             
             <div className="pt-2">
               <Button onClick={() => {
