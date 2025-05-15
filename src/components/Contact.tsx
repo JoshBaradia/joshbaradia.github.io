@@ -1,9 +1,11 @@
+
 import React, { useState } from "react";
-import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, Linkedin, Instagram, MapPin } from "lucide-react";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,6 +35,7 @@ const Contact = () => {
       setFormData({
         name: "",
         email: "",
+        subject: "",
         message: ""
       });
 
@@ -62,6 +65,16 @@ const Contact = () => {
                   <a href="mailto:jb9372@nyu.edu" className="text-muted-foreground hover:text-primary transition-colors">
                     jb9372@nyu.edu
                   </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <MapPin className="text-primary" size={20} />
+                <div>
+                  <p className="font-medium">Location</p>
+                  <p className="text-muted-foreground">
+                    New York City, NY, USA
+                  </p>
                 </div>
               </div>
               
@@ -109,6 +122,13 @@ const Contact = () => {
                   Email
                 </label>
                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your email address" required className="contact-input" />
+              </div>
+              
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-1">
+                  Subject
+                </label>
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Message subject" required className="contact-input" />
               </div>
               
               <div>

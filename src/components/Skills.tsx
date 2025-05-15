@@ -27,7 +27,7 @@ const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
       title: "Languages & Technologies",
-      skills: ["Python", "C", "Machine Learning", "Deep Learning", "NLP", "LLMs"],
+      skills: ["Python", "C", "Machine Learning", "Deep Learning", "NLP", "LLMs", "Generative AI"],
       delay: 0
     },
     {

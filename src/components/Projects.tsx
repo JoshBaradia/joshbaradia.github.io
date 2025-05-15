@@ -89,7 +89,7 @@ const Projects = () => {
       title: "Automated Smart Door Model",
       description: "Home safety system using gas, fire, and ultrasound sensors for enhanced security and automated responses.",
       technologies: ["IoT", "Sensors", "Automation", "Safety Systems"],
-      imageUrl: "https://www.mdpi.com/engines/mdpi/environments/journal/environments/img/environments-logo.png",
+      imageUrl: "https://i.postimg.cc/yNh2PQvW/engproc-82-00009-g001-550.jpg",
       delay: 0.4
     }
   ];
