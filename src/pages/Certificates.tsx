@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronLeft, Certificate, Book, Award } from "lucide-react";
+import { ChevronLeft, Award, Book } from "lucide-react";
 
 interface CertificateItem {
   title: string;
@@ -57,52 +57,52 @@ const CertificatesPage = () => {
     {
       title: "Strategic Innovation: Building and Sustaining Innovative Organizations",
       url: "https://www.coursera.org/account/accomplishments/verify/Z4KZ9AAIK0RS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Entrepreneurship 1: Developing the Opportunity",
       url: "https://www.coursera.org/account/accomplishments/verify/M2WPADVXIL4Z?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Introduction to Data Analytics in Google Cloud",
       url: "https://www.coursera.org/account/accomplishments/verify/8ZR9V628J79V",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Neural Networks and Deep Learning",
       url: "https://www.coursera.org/account/accomplishments/verify/YN5R34VE7ZCJ",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Python for Data Science, AI & Development",
       url: "https://www.coursera.org/account/accomplishments/verify/S89241DXXDN6",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Introduction to Finance, Accounting, Modeling and Valuation",
       url: "https://www.udemy.com/certificate/UC-d7f341b5-f3c6-4895-873c-3e4d88bff201/",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Financial Markets",
       url: "https://www.coursera.org/account/accomplishments/verify/ESZ6ZJQXG5J2",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Machine Learning A-Z: AI, Python & R + ChatGPT Bonus [2023]",
       url: "https://www.udemy.com/certificate/UC-0a005698-3f72-4f6b-a9f9-eb420a87a51d/",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "Python for Computer Vision with OpenCV and Deep Learning",
       url: "https://www.udemy.com/certificate/UC-18cc70f4-2fa4-49c9-8b7c-33f13f3dedb5/",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
     {
       title: "AWS Educate Introduction to Cloud 101",
       url: "https://www.credly.com/badges/43ca3ff1-f7e4-4165-8606-ab13ff9cf675/public_url",
-      icon: <Certificate size={18} className="text-primary flex-shrink-0" />
+      icon: <Award size={18} className="text-primary flex-shrink-0" />
     },
   ];
 
@@ -160,7 +160,7 @@ const CertificatesPage = () => {
           {/* Course Certifications */}
           <div>
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Certificate className="h-5 w-5 text-primary" />
+              <Award className="h-5 w-5 text-primary" />
               Course Certifications
             </h2>
             <Separator className="mb-6" />
