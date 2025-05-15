@@ -16,7 +16,7 @@ const ProjectCard = ({
   animationDelay: `${project.delay}s`
 }}>
     {project.imageUrl ? <div className="aspect-video rounded-md overflow-hidden mb-4 bg-muted">
-        <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+        <img src={project.imageUrl} alt={project.title} className="w-full h-full object-fill" />
       </div> : <div className="aspect-video rounded-md overflow-hidden mb-4 bg-muted flex items-center justify-center">
         <span className="text-muted-foreground">Project Image</span>
       </div>}
