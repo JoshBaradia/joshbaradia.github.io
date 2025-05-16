@@ -8,7 +8,10 @@ const Certifications = () => {
   return (
     <section id="certifications" className="section bg-background">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Certifications and Recognition</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center">
+          <Award className="h-7 w-7 text-primary mr-2" />
+          <span className="italic font-serif">Certifications and Recognition</span>
+        </h2>
         
         <div className="flex flex-col items-center justify-center max-w-xl mx-auto">
           <p className="text-center mb-8 text-muted-foreground">

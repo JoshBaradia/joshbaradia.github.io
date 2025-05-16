@@ -21,6 +21,14 @@ const Contact = () => {
     });
   };
 
+  const playSound = () => {
+    const audio = new Audio("https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3");
+    audio.volume = 0.5;
+    audio.play().catch(error => {
+      console.error("Error playing sound:", error);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -38,6 +46,9 @@ const Contact = () => {
         },
         '5A08LW69Rgrsf2sVB'
       );
+
+      // Play sound effect
+      playSound();
 
       // Show success message
       toast({
@@ -66,7 +77,11 @@ const Contact = () => {
 
   return <section id="contact" className="section">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Get In Touch</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Get In Touch</h2>
+        
+        <p className="text-center text-muted-foreground font-light mb-12 italic">
+          Have something in mind? Drop your message here!
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6 animate-fade-in">

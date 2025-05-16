@@ -1,3 +1,4 @@
+
 import React from "react";
 const About = () => {
   return <section id="about" className="section bg-muted/10">
@@ -30,15 +31,15 @@ const About = () => {
             <div className="space-y-6">
               <div className="relative border-l-2 border-primary pl-6 pb-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <h4 className="text-xl font-semibold">Master of Science, Management of Technology</h4>
                 <p className="text-muted-foreground">New York University</p>
+                <h4 className="text-xl font-semibold">Master of Science, Management of Technology</h4>
                 <p className="text-sm text-muted-foreground">Fall 2025</p>
               </div>
               
               <div className="relative border-l-2 border-primary pl-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <h4 className="text-xl font-semibold">B.Tech, CSE (Machine Intelligence & Data Science)</h4>
                 <p className="text-muted-foreground">PES University, Bengaluru, India</p>
+                <h4 className="text-xl font-semibold">B.Tech, CSE (Machine Intelligence & Data Science)</h4>
                 <p className="text-sm text-muted-foreground">2020 - 2024</p>
               </div>
             </div>
