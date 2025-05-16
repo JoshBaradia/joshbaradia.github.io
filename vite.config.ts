@@ -3,9 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
+// IMPORTANT: Replace 'your-repo-name' with your actual repo name on GitHub
+const isProduction = process.env.NODE_ENV === "production";
+
 export default defineConfig(({ mode }) => ({
-    base: "joshbaradia",
+  base: isProduction ? "/joshbaradia/" : "/",
   server: {
     host: "::",
     port: 8080,
