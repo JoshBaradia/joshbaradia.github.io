@@ -126,7 +126,7 @@ const Contact = () => {
                 <Linkedin className="text-primary" size={20} />
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">josh-baradia-158637157</a>
+                  <a href="https://www.linkedin.com/in/josh-baradia-158637157/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">josh-baradia-158637157</a>
                 </div>
               </div>
               
@@ -134,7 +134,7 @@ const Contact = () => {
                 <Instagram className="text-primary" size={20} />
                 <div>
                   <p className="font-medium">Instagram</p>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@joshbaradia</a>
+                  <a href="https://www.instagram.com/joshbaradia?igsh=MWl5djluNXJuNXpoZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@joshbaradia</a>
                 </div>
               </div>
             </div>

@@ -27,22 +27,22 @@ const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
       title: "Languages & Technologies",
-      skills: ["Python", "C", "Machine Learning", "Deep Learning", "NLP", "LLMs", "Generative AI"],
+      skills: ["Python", "C", "Machine Learning", "Deep Learning", "NLP", "LLMs", "Generative AI", "Transformer models", "Network analysis"],
       delay: 0
     },
     {
       title: "Tools & Libraries",
-      skills: ["TensorFlow", "Keras", "Pandas", "NumPy", "Power BI", "Scrapy", "LaTeX"],
+      skills: ["TensorFlow", "Keras", "Pandas", "NumPy", "Power BI", "Scrapy", "LaTeX", "Scikit-learn", "npm", "Adafruit IO", "Jupyter Notebook"],
       delay: 0.1
     },
     {
       title: "Cloud & Databases",
-      skills: ["MySQL", "DataBricks", "MongoDB", "AWS"],
+      skills: ["MySQL", "DataBricks", "MongoDB", "AWS", "Google Cloud Platform (GCP)"],
       delay: 0.2
     },
     {
       title: "Soft Skills",
-      skills: ["Communication", "Leadership", "Adaptability", "Project Management", "Problem Solving"],
+      skills: ["Communication", "Leadership", "Adaptability", "Project Management", "Problem Solving", "Team Collaboration", "Critical Thinking", "Technical Writing", "Event Management", "Paper Reviewing", "Public Speaking / Presentation"],
       delay: 0.3
     }
   ];
