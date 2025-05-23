@@ -1,11 +1,11 @@
-
 import React, { useState } from "react";
 import { Mail, Phone, Linkedin, Instagram, MapPin } from "lucide-react";
 import emailjs from 'emailjs-com';
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,14 +13,12 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
   const playSound = () => {
     const audio = new Audio("https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3");
     audio.volume = 0.5;
@@ -28,24 +26,17 @@ const Contact = () => {
       console.error("Error playing sound:", error);
     });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Send email using EmailJS
-      await emailjs.send(
-        'service_nwz2gqn',
-        'template_9sv24gm',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        '5A08LW69Rgrsf2sVB'
-      );
+      await emailjs.send('service_nwz2gqn', 'template_9sv24gm', {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      }, '5A08LW69Rgrsf2sVB');
 
       // Play sound effect
       playSound();
@@ -53,7 +44,7 @@ const Contact = () => {
       // Show success message
       toast({
         title: "Success!",
-        description: "Your message has been sent successfully.",
+        description: "Your message has been sent successfully."
       });
 
       // Reset form
@@ -68,13 +59,12 @@ const Contact = () => {
       toast({
         title: "Error",
         description: "Failed to send your message. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return <section id="contact" className="section">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Get In Touch</h2>
@@ -126,7 +116,7 @@ const Contact = () => {
                 <Linkedin className="text-primary" size={20} />
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <a href="https://www.linkedin.com/in/josh-baradia-158637157/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">josh-baradia-158637157</a>
+                  <a href="https://www.linkedin.com/in/josh-baradia-158637157/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">joshbaradia</a>
                 </div>
               </div>
               
@@ -140,7 +130,9 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-in" style={{
+          animationDelay: "0.2s"
+        }}>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
