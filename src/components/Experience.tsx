@@ -39,7 +39,7 @@ const Experience = () => {
     {
       title: "Associate Software Engineer",
       company: "Shyena Solutions Pvt Ltd.",
-      period: "Aug 2024 – Jul 2025",
+      period: "May 2025 – Jul 2025",
       description: [
         "Led machine learning pipeline development for NLP projects.",
         "Implemented and fine-tuned language models for text classification.",
