@@ -33,7 +33,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-start gap-4 mb-2">
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/34/New_York_University_Logo.svg" 
+                    src="https://postimg.cc/JtJpm95R" 
                     alt="NYU Logo" 
                     className="w-12 h-12 object-contain flex-shrink-0"
                   />
@@ -49,7 +49,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-start gap-4 mb-2">
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/en/d/d9/PES_University_Logo.png" 
+                    src="https://postimg.cc/bGDQgt6q" 
                     alt="PES University Logo" 
                     className="w-12 h-12 object-contain flex-shrink-0"
                   />
