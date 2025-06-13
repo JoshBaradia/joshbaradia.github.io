@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,6 +77,12 @@ const Navbar = () => {
               {link.name}
             </button>
           ))}
+          <Link 
+            to="/certificates"
+            className="text-sm font-medium hover:text-primary animated-underline py-1"
+          >
+            Certifications
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -106,6 +113,13 @@ const Navbar = () => {
                   {link.name}
                 </button>
               ))}
+              <Link 
+                to="/certificates"
+                className="py-2 text-sm font-medium hover:text-primary"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Certifications
+              </Link>
             </div>
           </div>
         </div>

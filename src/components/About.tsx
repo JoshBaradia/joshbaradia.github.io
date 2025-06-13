@@ -1,7 +1,9 @@
 
 import React from "react";
+
 const About = () => {
-  return <section id="about" className="section bg-muted/10">
+  return (
+    <section id="about" className="section bg-muted/10">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
         
@@ -19,33 +21,51 @@ const About = () => {
               in Machine Learning, Natural Language Processing, and Generative AI. My goal is to develop 
               AI solutions that address real-world challenges and create meaningful impact.
             </p>
-            <p className="text-muted-foreground">
-          </p>
           </div>
           
           <div className="space-y-8 animate-fade-in" style={{
-          animationDelay: "0.2s"
-        }}>
+            animationDelay: "0.2s"
+          }}>
             <h3 className="text-2xl font-semibold text-primary">Education</h3>
             
             <div className="space-y-6">
               <div className="relative border-l-2 border-primary pl-6 pb-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <p className="text-muted-foreground">New York University</p>
-                <h4 className="text-xl font-semibold">Master of Science, Management of Technology</h4>
-                <p className="text-sm text-muted-foreground">Fall 2025</p>
+                <div className="flex items-start gap-4 mb-2">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/34/New_York_University_Logo.svg" 
+                    alt="NYU Logo" 
+                    className="w-12 h-12 object-contain flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-muted-foreground">New York University</p>
+                    <h4 className="text-xl font-semibold">Master of Science, Management of Technology</h4>
+                    <p className="text-sm text-muted-foreground">Fall 2025</p>
+                  </div>
+                </div>
               </div>
               
               <div className="relative border-l-2 border-primary pl-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <p className="text-muted-foreground">PES University, Bengaluru, India</p>
-                <h4 className="text-xl font-semibold">B.Tech, CSE (Machine Intelligence & Data Science)</h4>
-                <p className="text-sm text-muted-foreground">2020 - 2024</p>
+                <div className="flex items-start gap-4 mb-2">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/en/d/d9/PES_University_Logo.png" 
+                    alt="PES University Logo" 
+                    className="w-12 h-12 object-contain flex-shrink-0"
+                  />
+                  <div>
+                    <p className="text-muted-foreground">PES University, Bengaluru, India</p>
+                    <h4 className="text-xl font-semibold">B.Tech, CSE (Machine Intelligence & Data Science)</h4>
+                    <p className="text-sm text-muted-foreground">2020 - 2024</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;
