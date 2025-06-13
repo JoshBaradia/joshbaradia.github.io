@@ -33,7 +33,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-start gap-4 mb-2">
                   <img 
-                    src="/images.png" 
+                    src="https://i.postimg.cc/G3gVPRBT/images.png" 
                     alt="NYU Logo" 
                     className="w-12 h-12 object-contain flex-shrink-0"
                   />
@@ -49,7 +49,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-start gap-4 mb-2">
                   <img 
-                    src="PES-University-Logo.png" 
+                    src="https://i.postimg.cc/nLT0HKB9/PES-University-Logo.webp" 
                     alt="PES University Logo" 
                     className="w-12 h-12 object-contain flex-shrink-0"
                   />
