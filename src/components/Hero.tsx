@@ -37,7 +37,7 @@ const Hero = () => {
           </div>
           
           {/* Hero Image */}
-          <div className="flex justify-center md:justify-end mb-8 md:mb-0 order-1 md:order-2">
+          <div className="flex justify-center md:justify-center mb-8 md:mb-0 order-1 md:order-2">
             <div className="relative">
               <div className="absolute -z-10 blur-[80px] opacity-30 rounded-full w-72 h-72 bg-primary top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
               <div className="relative w-64 h-64 md:w-80 md:h-80 animate-fade-in rounded-2xl overflow-hidden border-2 border-primary/20" style={{
