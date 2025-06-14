@@ -49,7 +49,7 @@ const About = () => {
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-start gap-4 mb-2">
                   <img 
-                    src="https://i.postimg.cc/nLT0HKB9/PES-University-Logo.webp" 
+                    src="https://i.postimg.cc/hjMVY4Qk/PES-University-Logo1.png" 
                     alt="PES University Logo" 
                     className="w-12 h-12 object-contain flex-shrink-0"
                   />
