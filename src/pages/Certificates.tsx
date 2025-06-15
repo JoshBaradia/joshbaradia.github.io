@@ -1,11 +1,10 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import CertificateCarouselItem from "@/components/CertificateCarouselItem";
-import { ChevronLeft, Award, Book } from "lucide-react";
+import { ChevronLeft, Award, Book, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CertificateItem {
   title: string;
@@ -154,17 +153,24 @@ const CertificatesPage = () => {
               <h2 className="text-2xl font-semibold mb-2">Research Conferences and Reviewer Recognition</h2>
               <p className="text-muted-foreground">Published research and peer review contributions to international conferences</p>
             </div>
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-4">
-                {researchCertificates.map((cert, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <CertificateCarouselItem {...cert} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <div className="relative">
+              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                <span>Scroll horizontally to explore more certificates</span>
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </div>
+              <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+                <CarouselContent className="-ml-4">
+                  {researchCertificates.map((cert, index) => (
+                    <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                      <CertificateCarouselItem {...cert} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground" />
+                <CarouselNext className="hover:bg-primary hover:text-primary-foreground" />
+              </Carousel>
+            </div>
           </TabsContent>
 
           <TabsContent value="courses" className="mt-8">
@@ -172,17 +178,24 @@ const CertificatesPage = () => {
               <h2 className="text-2xl font-semibold mb-2">Course Certifications</h2>
               <p className="text-muted-foreground">Professional development through online courses and specialized training</p>
             </div>
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-4">
-                {courseCertificates.map((cert, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <CertificateCarouselItem {...cert} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <div className="relative">
+              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                <span>Scroll horizontally to explore more certificates</span>
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </div>
+              <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+                <CarouselContent className="-ml-4">
+                  {courseCertificates.map((cert, index) => (
+                    <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                      <CertificateCarouselItem {...cert} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground" />
+                <CarouselNext className="hover:bg-primary hover:text-primary-foreground" />
+              </Carousel>
+            </div>
           </TabsContent>
 
           <TabsContent value="other" className="mt-8">
@@ -190,17 +203,24 @@ const CertificatesPage = () => {
               <h2 className="text-2xl font-semibold mb-2">Other Achievements</h2>
               <p className="text-muted-foreground">Additional certifications, competitions, and professional recognitions</p>
             </div>
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-4">
-                {otherCertificates.map((cert, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <CertificateCarouselItem {...cert} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <div className="relative">
+              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                <span>Scroll horizontally to explore more certificates</span>
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </div>
+              <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+                <CarouselContent className="-ml-4">
+                  {otherCertificates.map((cert, index) => (
+                    <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                      <CertificateCarouselItem {...cert} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hover:bg-primary hover:text-primary-foreground" />
+                <CarouselNext className="hover:bg-primary hover:text-primary-foreground" />
+              </Carousel>
+            </div>
           </TabsContent>
         </Tabs>
       </div>

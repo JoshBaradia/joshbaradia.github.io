@@ -31,11 +31,11 @@ const About = () => {
             <div className="space-y-6">
               <div className="relative border-l-2 border-primary pl-6 pb-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <div className="flex items-start gap-4 mb-2">
+                <div className="flex items-center gap-4 mb-2">
                   <img 
                     src="https://i.postimg.cc/G3gVPRBT/images.png" 
                     alt="NYU Logo" 
-                    className="w-12 h-12 object-contain flex-shrink-0"
+                    className="w-10 h-10 object-contain flex-shrink-0 mt-2"
                   />
                   <div>
                     <p className="text-muted-foreground">New York University</p>
@@ -47,11 +47,11 @@ const About = () => {
               
               <div className="relative border-l-2 border-primary pl-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
-                <div className="flex items-start gap-4 mb-2">
+                <div className="flex items-center gap-4 mb-2">
                   <img 
                     src="https://i.postimg.cc/hjMVY4Qk/PES-University-Logo1.png" 
                     alt="PES University Logo" 
-                    className="w-12 h-12 object-contain flex-shrink-0"
+                    className="w-10 h-10 object-contain flex-shrink-0 mt-2"
                   />
                   <div>
                     <p className="text-muted-foreground">PES University, Bengaluru, India</p>
