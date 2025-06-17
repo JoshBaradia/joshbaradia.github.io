@@ -9,13 +9,16 @@ interface SkillCategory {
 
 const SkillCategory = ({ category }: { category: SkillCategory }) => (
   <div 
-    className="bg-card rounded-lg p-6 border border-border animate-fade-in"
+    className="bg-card rounded-lg p-6 border border-border animate-fade-in hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
     style={{ animationDelay: `${category.delay}s` }}
   >
     <h3 className="text-xl font-semibold mb-4 text-primary">{category.title}</h3>
     <div className="flex flex-wrap gap-2">
       {category.skills.map((skill, index) => (
-        <span key={index} className="skill-tag">
+        <span 
+          key={index} 
+          className="skill-tag hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200 cursor-pointer hover:shadow-md"
+        >
           {skill}
         </span>
       ))}
