@@ -24,7 +24,7 @@ const Certifications = () => {
               className="flex items-center gap-2"
             >
               <Award className="h-5 w-5" />
-              Proof I Walk the Talk
+              Proof I Walk the Talk <span className="text-primary">📌</span>
             </Button>
           </Link>
         </div>
