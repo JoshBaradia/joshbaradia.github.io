@@ -3,12 +3,41 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  // Set default theme to dark
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check system preference first
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
 
   useEffect(() => {
-    // Apply dark mode by default
-    document.documentElement.classList.add("dark");
+    // Apply theme based on system preference on initial load
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Set initial theme
+    if (mediaQuery.matches) {
+      document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setIsDarkMode(false);
+    }
+
+    // Listen for system theme changes
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+        setIsDarkMode(true);
+      } else {
+        document.documentElement.classList.remove("dark");
+        setIsDarkMode(false);
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
