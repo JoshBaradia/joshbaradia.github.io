@@ -16,7 +16,7 @@ const Footer = () => {
           
           <div>
             <p className="text-sm text-muted-foreground">
-              Built using React & Tailwind CSS!
+              Built using React & Tailwind CSS!<span className="text-primary">✨</span>
             </p>
           </div>
         </div>
