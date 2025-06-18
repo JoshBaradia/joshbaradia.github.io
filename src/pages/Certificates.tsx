@@ -154,11 +154,11 @@ const CertificatesPage = () => {
               <p className="text-muted-foreground">Published research and peer review contributions to international conferences</p>
             </div>
             <div className="relative">
-              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+{/*               <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 <span>Scroll horizontally to explore more certificates</span>
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </div>
+              </div> */}
               <Carousel className="w-full" opts={{ align: "start", loop: true }}>
                 <CarouselContent className="-ml-4">
                   {researchCertificates.map((cert, index) => (
