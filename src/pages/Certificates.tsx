@@ -179,11 +179,11 @@ const CertificatesPage = () => {
               <p className="text-muted-foreground">Professional development through online courses and specialized training</p>
             </div>
             <div className="relative">
-              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+{/*               <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 <span>Scroll horizontally to explore more certificates</span>
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </div>
+              </div> */}
               <Carousel className="w-full" opts={{ align: "start", loop: true }}>
                 <CarouselContent className="-ml-4">
                   {courseCertificates.map((cert, index) => (
@@ -204,11 +204,11 @@ const CertificatesPage = () => {
               <p className="text-muted-foreground">Additional certifications, competitions, and professional recognitions</p>
             </div>
             <div className="relative">
-              <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
+{/*               <div className="flex items-center justify-center mb-4 text-sm text-muted-foreground">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 <span>Scroll horizontally to explore more certificates</span>
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </div>
+              </div> */}
               <Carousel className="w-full" opts={{ align: "start", loop: true }}>
                 <CarouselContent className="-ml-4">
                   {otherCertificates.map((cert, index) => (
