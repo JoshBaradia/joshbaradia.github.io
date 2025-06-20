@@ -69,6 +69,15 @@ const Experience = () => {
         "Implemented data pipelines for automated reporting."
       ],
       delay: 0.4
+    },
+    {
+      title: "Internship Trainee",
+      company: "Bharat Sanchar Nigam Limited(BSNL, Govt. of INDIA)",
+      period: "Jun 2022 – July 2022",
+      description: [
+        "Gained knowledge in the field of Data Networks & Cyber Security. Carried out a mini-project in Networking on CAN using Coupled Network Pair (CNP) simulation software."
+      ],
+      delay: 0.4
     }
   ];
 
