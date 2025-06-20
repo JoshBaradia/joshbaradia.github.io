@@ -1,6 +1,4 @@
-
 import React from "react";
-
 const ExperienceItem = ({
   title,
   company,
@@ -39,11 +37,11 @@ const Experience = () => {
     {
       title: "Associate Software Engineer",
       company: "Shyena Solutions Pvt Ltd.",
-      period: "May 2025 – Jul 2025",
+      period: "August 2024 – June 2025",
       description: [
+        "Designed and implemented a user profiling system leveraging LSTM and XGBoost for anomaly detection, as part of a project with the Indian Air Force.", 
         "Led machine learning pipeline development for NLP projects.",
         "Implemented and fine-tuned language models for text classification.",
-        "Collaborated with cross-functional teams to deliver AI solutions.",
         "Created efficient data processing pipelines for large datasets."
       ],
       delay: 0
