@@ -29,7 +29,7 @@ const About = () => {
             <h3 className="text-2xl font-semibold text-primary">Education</h3>
             
             <div className="space-y-6">
-              <div className="relative border-l-2 border-primary pl-6 pb-6">
+              <div className="relative border-l-2 border-primary pl-6">
                 <div className="absolute top-0 left-[-9px] h-4 w-4 rounded-full bg-primary"></div>
                 <div className="flex items-center gap-4 mb-2">
                   <img 
