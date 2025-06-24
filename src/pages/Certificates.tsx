@@ -57,7 +57,7 @@ const CertificatesPage = () => {
     {
       title: "Introduction to Data Analytics in Google Cloud",
       url: "https://www.coursera.org/account/accomplishments/verify/8ZR9V628J79V",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/MpCk7khH/Screenshot-2025-06-24-at-3-35-14-PM.png",
       description: "Google Cloud Platform data analytics fundamentals and tools"
     },
     {
