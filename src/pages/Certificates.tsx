@@ -45,7 +45,7 @@ const CertificatesPage = () => {
     {
       title: "Strategic Innovation: Building and Sustaining Innovative Organizations",
       url: "https://www.coursera.org/account/accomplishments/verify/Z4KZ9AAIK0RS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course",
-      image: "https://i.postimg.cc/F15Q0kdz/Screenshot-2025-06-24-at-2-25-03-PM.png",
+      image: "https://i.postimg.cc/HnQd6NS4/Screenshot-2025-06-24-at-6-27-21-PM.png",
       description: "Strategic innovation and organizational development course completion"
     },
     {
@@ -63,31 +63,31 @@ const CertificatesPage = () => {
     {
       title: "Neural Networks and Deep Learning",
       url: "https://www.coursera.org/account/accomplishments/verify/YN5R34VE7ZCJ",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/d0b8d7gk/Screenshot-2025-06-24-at-6-29-51-PM.png",
       description: "Deep learning fundamentals and neural network architectures"
     },
     {
       title: "Python for Data Science, AI & Development",
       url: "https://www.coursera.org/account/accomplishments/verify/S89241DXXDN6",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/dVH0gzBJ/Screenshot-2025-06-24-at-6-30-58-PM.png",
       description: "Python programming for data science and artificial intelligence"
     },
     {
       title: "Financial Markets",
       url: "https://www.coursera.org/account/accomplishments/verify/ESZ6ZJQXG5J2",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/hjfKKPK2/Screenshot-2025-06-24-at-6-32-06-PM.png",
       description: "Understanding financial markets, instruments, and investment strategies"
     },
     {
       title: "Machine Learning A-Z: AI, Python & R + ChatGPT Bonus [2023]",
       url: "https://www.udemy.com/certificate/UC-0a005698-3f72-4f6b-a9f9-eb420a87a51d/",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/Y9KwBNyC/Screenshot-2025-06-24-at-6-33-25-PM.png",
       description: "Comprehensive machine learning course covering Python and R programming"
     },
     {
       title: "AWS Educate Introduction to Cloud 101",
       url: "https://www.credly.com/badges/43ca3ff1-f7e4-4165-8606-ab13ff9cf675/public_url",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/cLwpMtJq/Screenshot-2025-06-24-at-6-34-29-PM.png",
       description: "Amazon Web Services cloud computing fundamentals and concepts"
     }
   ];
