@@ -24,7 +24,7 @@ const CertificatesPage = () => {
     {
       title: "15th ICCCNT (IIT Mandi)",
       url: "https://drive.google.com/file/d/1MP5ahxUs1LDrLh37PND350DkBkkKvwTt/view?usp=drive_link",
-      image: "https://i.postimg.cc/sxNjH1kp/Screenshot-2025-06-24-at-2-17-00-PM.png",
+      image: "https://i.postimg.cc/j50124yW/Screenshot-2025-06-24-at-3-30-59-PM.png",
       description: "International Conference on Computing, Communication and Networking Technologies"
     },
     {
