@@ -96,25 +96,25 @@ const CertificatesPage = () => {
     {
       title: "Techfest IIT Bombay",
       url: "https://drive.google.com/file/d/1upAsEwnYODE3HQgMSFursIkXpzsO2xL3/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/HnsrgCVz/Screenshot-2025-06-24-at-6-36-45-PM.png",
       description: "Participation in Asia's largest science and technology festival"
     },
     {
       title: "Healcode Hackathon",
       url: "https://drive.google.com/file/d/1M_ZI18FFk0IhWikH40787oxqTEpK6B38/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/rscPyfkQ/Screenshot-2025-06-24-at-6-37-52-PM.png",
       description: "Healthcare technology hackathon achievement and innovation"
     },
     {
       title: "BSNL Computer Network",
       url: "https://drive.google.com/file/d/13cdnZsPytiYquHE2uJZgt1Qy3LCLGK8v/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/02v6YFxc/Screenshot-2025-06-24-at-6-38-53-PM.pngp",
       description: "Computer networking certification from Bharat Sanchar Nigam Limited"
     },
     {
       title: "PESU I/O Basis of Marketing",
       url: "https://drive.google.com/file/d/1RjGTb6-vhDWpdOv1Q7aa9XM5sEooxgN0/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/ryxjyBQJ/Screenshot-2025-06-24-at-6-39-39-PM.png",
       description: "Marketing fundamentals and digital marketing strategies"
     }
   ];
