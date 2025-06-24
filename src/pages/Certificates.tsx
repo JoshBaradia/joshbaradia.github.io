@@ -24,19 +24,19 @@ const CertificatesPage = () => {
     {
       title: "15th ICCCNT (IIT Mandi)",
       url: "https://drive.google.com/file/d/1MP5ahxUs1LDrLh37PND350DkBkkKvwTt/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/sxNjH1kp/Screenshot-2025-06-24-at-2-17-00-PM.png",
       description: "International Conference on Computing, Communication and Networking Technologies"
     },
     {
       title: "CVMI 2023 Reviewer",
       url: "https://drive.google.com/file/d/1hnu_4q-8R8KDLwKhE9ff1V9bKkeyVu_Q/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/NMVGpKqR/Screenshot-2025-06-24-at-2-18-36-PM.png",
       description: "Peer review recognition for Computer Vision and Machine Intelligence conference"
     },
     {
       title: "The 14th ICCCNT (IIT Delhi)",
       url: "https://drive.google.com/file/d/1qU62SHzAqe8wIrxqTiNzNoCwSGI_n3NT/view?usp=drive_link",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/XqSX2JtG/Screenshot-2025-06-24-at-2-20-13-PM.png",
       description: "Research contribution to computing and networking technologies"
     }
   ];
@@ -45,7 +45,7 @@ const CertificatesPage = () => {
     {
       title: "Strategic Innovation: Building and Sustaining Innovative Organizations",
       url: "https://www.coursera.org/account/accomplishments/verify/Z4KZ9AAIK0RS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/F15Q0kdz/Screenshot-2025-06-24-at-2-25-03-PM.png",
       description: "Strategic innovation and organizational development course completion"
     },
     {
