@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
@@ -13,17 +12,17 @@ interface Publication {
 
 const PublicationCard = ({ publication }: { publication: Publication }) => (
   <div 
-    className="publication-card animate-fade-in" 
+    className="publication-card animate-fade-in hover:shadow-lg dark:hover:shadow-white/10 dark:hover:shadow-xl transition-all duration-300" 
     style={{ animationDelay: `${publication.delay}s` }}
   >
-    <h3 className="text-xl font-semibold mb-2">{publication.title}</h3>
+    <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors duration-200">{publication.title}</h3>
     <p className="text-primary font-medium mb-2">{publication.conference}, {publication.year}</p>
     <p className="text-muted-foreground mb-4">{publication.abstract}</p>
     <a 
       href={publication.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium"
+      className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium hover:shadow-sm dark:hover:shadow-white/20 transition-all duration-200 px-2 py-1 rounded"
     >
       View Publication <ExternalLink size={14} />
     </a>

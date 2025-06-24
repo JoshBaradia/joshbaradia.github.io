@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface SkillCategory {
@@ -9,7 +8,7 @@ interface SkillCategory {
 
 const SkillCategory = ({ category }: { category: SkillCategory }) => (
   <div 
-    className="bg-card rounded-lg p-6 border border-border animate-fade-in hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+    className="bg-card rounded-lg p-6 border border-border animate-fade-in hover:shadow-lg transition-all duration-300 hover:-translate-y-1 dark:hover:shadow-white/10 dark:hover:shadow-xl"
     style={{ animationDelay: `${category.delay}s` }}
   >
     <h3 className="text-xl font-semibold mb-4 text-primary">{category.title}</h3>
@@ -17,7 +16,7 @@ const SkillCategory = ({ category }: { category: SkillCategory }) => (
       {category.skills.map((skill, index) => (
         <span 
           key={index} 
-          className="skill-tag hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200 cursor-pointer hover:shadow-md"
+          className="skill-tag hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200 cursor-pointer hover:shadow-md dark:hover:shadow-white/20 dark:hover:shadow-lg"
         >
           {skill}
         </span>
