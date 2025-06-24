@@ -18,7 +18,7 @@ const CertificatesPage = () => {
     {
       title: "31st International Conference on COLING 2025",
       url: "https://drive.google.com/file/d/1BhRyg4gtnetb6oyP55FShoPY18GVhENT/view?usp=sharing",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/gJ2YHvxM/Screenshot-2025-06-24-at-2-09-25-PM.png",
       description: "Research publication in computational linguistics and natural language processing"
     },
     {
