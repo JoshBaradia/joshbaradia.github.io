@@ -51,7 +51,7 @@ const CertificatesPage = () => {
     {
       title: "Entrepreneurship 1: Developing the Opportunity",
       url: "https://www.coursera.org/account/accomplishments/verify/M2WPADVXIL4Z?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop",
+      image: "https://i.postimg.cc/52CkH5zW/Screenshot-2025-06-24-at-2-42-40-PM.png",
       description: "Foundational entrepreneurship skills and opportunity identification"
     },
     {
