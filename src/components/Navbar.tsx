@@ -67,8 +67,34 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
+        <div className="hidden lg:flex items-center space-x-6">
+          {navLinks.slice(0, -1).map((link) => (
+            <button
+              key={link.sectionId}
+              onClick={() => scrollToSection(link.sectionId)}
+              className="text-sm font-medium hover:text-primary animated-underline py-1 whitespace-nowrap"
+            >
+              {link.name}
+            </button>
+          ))}
+          <Link 
+            to="/certificates"
+            className="text-sm font-medium hover:text-primary animated-underline py-1 whitespace-nowrap"
+          >
+            Certifications
+          </Link>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="text-sm font-medium hover:text-primary animated-underline py-1 whitespace-nowrap"
+          >
+            Contact
+          </button>
+          <ThemeToggle />
+        </div>
+
+        {/* Tablet Navigation */}
+        <div className="hidden md:flex lg:hidden items-center space-x-4">
+          {navLinks.slice(0, 4).map((link) => (
             <button
               key={link.sectionId}
               onClick={() => scrollToSection(link.sectionId)}
@@ -77,17 +103,18 @@ const Navbar = () => {
               {link.name}
             </button>
           ))}
-          <Link 
-            to="/certificates"
-            className="text-sm font-medium hover:text-primary animated-underline py-1"
-          >
-            Certifications
-          </Link>
           <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-md bg-secondary text-secondary-foreground"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <div className="flex items-center md:hidden space-x-4">
+        <div className="flex items-center md:hidden space-x-2">
           <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -101,25 +128,31 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
+            <div className="flex flex-col space-y-3">
+              {navLinks.slice(0, -1).map((link) => (
                 <button
                   key={link.sectionId}
                   onClick={() => scrollToSection(link.sectionId)}
-                  className="py-2 text-sm font-medium hover:text-primary"
+                  className="py-2 px-2 text-sm font-medium hover:text-primary hover:bg-secondary/50 rounded-md transition-colors text-left"
                 >
                   {link.name}
                 </button>
               ))}
               <Link 
                 to="/certificates"
-                className="py-2 text-sm font-medium hover:text-primary"
+                className="py-2 px-2 text-sm font-medium hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Certifications
               </Link>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="py-2 px-2 text-sm font-medium hover:text-primary hover:bg-secondary/50 rounded-md transition-colors text-left"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>
