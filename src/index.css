@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,48 +7,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 250 100% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 201 100% 50%;
+    --primary: 271 81% 56%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
+    --secondary: 270 20% 95%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
+    --muted: 270 20% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
+    --accent: 270 20% 94%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --border: 270 15% 88%;
+    --input: 270 15% 88%;
+    --ring: 271 81% 56%;
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 230 15% 8%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 230 15% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 230 15% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 201 100% 50%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 230 15% 8%;
+    --secondary: 230 15% 15%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
+    --muted: 230 15% 15%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --accent: 230 15% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 201 100% 50%;
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 271 81% 56%;
   }
 }
 
@@ -57,8 +58,14 @@
   }
   
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply text-foreground font-inter;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(270 30% 96%) 50%, hsl(var(--background)) 100%);
     font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(230 25% 12%) 50%, hsl(var(--background)) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -82,7 +89,7 @@
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-24 relative;
   }
 
   .container {
@@ -96,46 +103,66 @@
   .gradient-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-background to-transparent;
   }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg;
+  }
+
+  .dark .glass-effect {
+    @apply bg-black/10 border-white/10;
+  }
+
+  .floating-card {
+    @apply glass-effect rounded-2xl p-8 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent;
+  }
 }
 
 .timeline-line {
-  @apply absolute left-7 top-0 h-full w-0.5 bg-border;
+  @apply absolute left-7 top-0 h-full w-0.5 bg-gradient-to-b from-primary/50 to-primary/20;
 }
 
 .timeline-circle {
-  @apply absolute left-5 top-1 h-4 w-4 rounded-full border-2 border-primary bg-background;
+  @apply absolute left-5 top-1 h-4 w-4 rounded-full border-2 border-primary bg-background shadow-lg;
 }
 
 .project-card {
-  @apply relative overflow-hidden rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1;
+  @apply relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-lg p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30;
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25), 0 0 0 1px rgba(139, 92, 246, 0.1);
 }
 
 .dark .project-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.15), 0 10px 10px -5px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.2);
 }
 
 .skill-tag {
-  @apply rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground transform transition-all duration-200 ease-in-out;
-}
-
-.skill-tag:hover {
-  @apply bg-primary text-primary-foreground scale-105 shadow-md;
+  @apply rounded-full bg-secondary/80 backdrop-blur-sm px-4 py-2 text-sm font-medium text-secondary-foreground transform transition-all duration-300 ease-in-out hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-lg;
 }
 
 .publication-card {
-  @apply rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  @apply rounded-2xl border border-border/50 bg-card/80 backdrop-blur-lg p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30;
+}
+
+.publication-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25), 0 0 0 1px rgba(139, 92, 246, 0.1);
+}
+
+.dark .publication-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.2);
 }
 
 .contact-input {
-  @apply w-full rounded-md border border-input bg-transparent px-4 py-3 text-foreground focus:outline-none focus:ring-1 focus:ring-primary;
+  @apply w-full rounded-xl border border-input/50 bg-background/50 backdrop-blur-sm px-4 py-3 text-foreground transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50;
 }
 
 .glass-card {
-  @apply bg-opacity-10 backdrop-blur-lg backdrop-filter border border-white/10 rounded-lg;
+  @apply bg-card/80 backdrop-blur-lg border border-border/30 rounded-2xl shadow-xl;
 }
 
 .has-tooltip:hover .tooltip {
@@ -144,4 +171,23 @@
 
 .tooltip {
   @apply hidden absolute bg-black text-white text-xs rounded py-1 px-2 -mt-16 -ml-2 whitespace-nowrap;
+}
+
+/* Floating elements animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient backgrounds for sections */
+.section-gradient {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(270 20% 98%) 100%);
+}
+
+.dark .section-gradient {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(230 20% 10%) 100%);
 }
