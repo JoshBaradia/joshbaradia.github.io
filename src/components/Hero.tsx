@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -9,32 +9,32 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5"></div>
       
       <div className="container mx-auto px-4 pt-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Hero Text Content */}
-          <div className="flex flex-col space-y-8 animate-fade-in order-2 lg:order-1">
+          <div className="flex flex-col space-y-6 lg:space-y-8 animate-fade-in order-2 lg:order-1">
             <div className="space-y-4">
               <div className="inline-block">
-                <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20">
+                <span className="px-3 py-2 sm:px-4 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20">
                   👋 Welcome to my portfolio
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                 Hi, I'm{" "}
                 <span className="gradient-text">
                   Josh Baradia
                 </span>
               </h1>
               
-              <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-muted-foreground">
                 AI Researcher | Technologist | ML Enthusiast
               </h2>
             </div>
             
-            <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Engineer and researcher, passionate about machine intelligence and innovation. 
               Bridging technology and business to build impactful AI solutions.
             </p>
@@ -48,19 +48,10 @@ const Hero = () => {
                   }
                 }} 
                 size="lg"
-                className="group text-lg px-8 py-4 rounded-full bg-primary hover:bg-primary/90 transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary hover:bg-primary/90 transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 Explore My Work 
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="text-lg px-8 py-4 rounded-full border-2 backdrop-blur-sm hover:bg-primary/5 transform transition-all duration-300 hover:scale-105"
-              >
-                <Download className="mr-2" size={20} />
-                Resume
               </Button>
             </div>
 
@@ -69,7 +60,7 @@ const Hero = () => {
                 href="https://www.linkedin.com/in/josh-baradia-158637157/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50"
               >
                 <Linkedin size={20} />
               </a>
@@ -77,7 +68,7 @@ const Hero = () => {
                 href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50"
               >
                 <Github size={20} />
               </a>
@@ -88,19 +79,19 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative">
               {/* Floating background elements */}
-              <div className="absolute -top-4 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: "1s"}}></div>
+              <div className="absolute -top-4 -left-4 w-64 h-64 sm:w-72 sm:h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-56 h-56 sm:w-64 sm:h-64 bg-blue-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: "1s"}}></div>
               
-              <div className="relative w-80 h-80 md:w-96 md:h-96 animate-fade-in floating" style={{animationDelay: "0.3s"}}>
-                <div className="glass-effect rounded-3xl p-6 h-full">
-                  <AspectRatio ratio={1 / 1} className="bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-2xl overflow-hidden">
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 animate-fade-in floating" style={{animationDelay: "0.3s"}}>
+                <div className="glass-effect rounded-3xl p-4 sm:p-6 h-full border border-border/50">
+                  <AspectRatio ratio={1 / 1} className="bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-2xl overflow-hidden">
                     <Avatar className="w-full h-full rounded-2xl">
                       <AvatarImage 
                         src="https://i.postimg.cc/JnT93DZ9/Josh.png" 
                         alt="Josh Baradia" 
                         className="object-cover" 
                       />
-                      <AvatarFallback className="text-6xl font-bold gradient-text text-primary rounded-2xl">
+                      <AvatarFallback className="text-4xl sm:text-6xl font-bold gradient-text text-primary rounded-2xl">
                         JB
                       </AvatarFallback>
                     </Avatar>
@@ -122,7 +113,7 @@ const Hero = () => {
           }} 
           variant="ghost" 
           size="icon" 
-          className="animate-bounce rounded-full hover:bg-primary/10 transition-colors backdrop-blur-sm"
+          className="animate-bounce rounded-full hover:bg-primary/10 transition-colors backdrop-blur-sm border border-border/30"
           aria-label="Scroll down"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
