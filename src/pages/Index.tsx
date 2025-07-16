@@ -36,6 +36,8 @@ const Index = () => {
         <div className="ribbon"></div>
         <div className="ribbon"></div>
         <div className="ribbon"></div>
+        <div className="ribbon"></div>
+        <div className="ribbon"></div>
       </div>
 
       {/* Decorative background elements */}
