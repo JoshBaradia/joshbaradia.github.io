@@ -10,53 +10,82 @@ import Publications from "../components/Publications";
 import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Scene3D from "../components/3d/Scene3D";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [currentSection, setCurrentSection] = useState<'hero' | 'about' | 'experience' | 'projects' | 'skills'>('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      
+      // Determine current section based on scroll position
+      const sections = ['hero', 'about', 'experience', 'projects', 'skills'] as const;
+      const sectionHeight = window.innerHeight;
+      const currentIndex = Math.floor(scrollY / sectionHeight);
+      const section = sections[Math.min(currentIndex, sections.length - 1)];
+      setCurrentSection(section);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [scrollY]);
 
   useEffect(() => {
     // Update CSS custom property for scroll-based animations
     document.documentElement.style.setProperty('--scroll-progress', (scrollY / window.innerHeight).toString());
   }, [scrollY]);
 
+  const scrollProgress = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+
   return (
-    <div className="min-h-screen relative">
-      {/* Moving ribbons background */}
-      <div className="moving-ribbons">
-        <div className="ribbon"></div>
-        <div className="ribbon"></div>
-        <div className="ribbon"></div>
-        <div className="ribbon"></div>
-        <div className="ribbon"></div>
-        <div className="ribbon"></div>
+    <div className="min-h-screen relative overflow-x-hidden">
+      {/* 3D Background Scene */}
+      <div className="fixed inset-0 z-0">
+        <Scene3D scrollProgress={scrollProgress} section={currentSection} />
       </div>
 
-      {/* Decorative background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 sm:w-72 sm:h-72 bg-primary/5 rounded-full blur-3xl floating"></div>
-        <div className="absolute top-1/3 right-10 w-80 h-80 sm:w-96 sm:h-96 bg-blue-500/5 rounded-full blur-3xl floating" style={{animationDelay: "2s"}}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 sm:w-80 sm:h-80 bg-cyan-500/5 rounded-full blur-3xl floating" style={{animationDelay: "4s"}}></div>
+      {/* Subtle data grid overlay */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
+
+      {/* Animated data particles */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
       </div>
       
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Publications />
-      <Certifications />
-      <Contact />
-      <Footer />
+      {/* Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Publications />
+        <Certifications />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

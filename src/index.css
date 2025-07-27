@@ -58,7 +58,7 @@
   
   body {
     @apply text-foreground font-inter;
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 40% 96%) 50%, hsl(var(--background)) 100%);
+    background: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(220 40% 96%) 50%, hsl(var(--background)) 100%);
     font-feature-settings: "rlig" 1, "calt" 1;
     min-height: 100vh;
     position: relative;
@@ -66,7 +66,7 @@
   }
 
   .dark body {
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 30% 8%) 50%, hsl(var(--background)) 100%);
+    background: radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(220 30% 8%) 50%, hsl(var(--background)) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -114,7 +114,21 @@
   }
 
   .floating-card {
-    @apply glass-effect rounded-2xl p-6 sm:p-8 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    @apply glass-effect rounded-2xl p-6 sm:p-8 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20;
+  }
+
+  /* AI-themed effects */
+  .neural-glow {
+    @apply relative;
+  }
+
+  .neural-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary/20 via-blue-500/20 to-cyan-500/20 rounded-full blur-xl opacity-0 transition-opacity duration-300;
+  }
+
+  .neural-glow:hover::before {
+    @apply opacity-100;
   }
 
   .gradient-text {

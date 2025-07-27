@@ -1,15 +1,33 @@
 
-import React from "react";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, Github, Linkedin, Brain, Database, Cpu, Network } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Scene3D from "./3d/Scene3D";
 
 const Hero = () => {
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5"></div>
+      {/* Interactive 3D background */}
+      <div className="absolute inset-0 z-0">
+        <Scene3D scrollProgress={0} section="hero" interactive={true} />
+      </div>
+
+      {/* Neural network pattern overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32">
+          <Brain className="w-full h-full text-primary animate-pulse" />
+        </div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24">
+          <Database className="w-full h-full text-blue-500 animate-pulse" style={{animationDelay: "1s"}} />
+        </div>
+        <div className="absolute top-1/2 left-1/2 w-20 h-20 transform -translate-x-1/2 -translate-y-1/2">
+          <Network className="w-full h-full text-cyan-500 animate-pulse" style={{animationDelay: "2s"}} />
+        </div>
+      </div>
       
       <div className="container mx-auto px-4 pt-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -17,29 +35,49 @@ const Hero = () => {
           <div className="flex flex-col space-y-6 lg:space-y-8 animate-fade-in order-2 lg:order-1">
             <div className="space-y-4">
               <div className="inline-block">
-                <span className="px-3 py-2 sm:px-4 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20">
-                  👋 Welcome to my portfolio
+                <span className="px-3 py-2 sm:px-4 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 flex items-center gap-2">
+                  <Brain className="w-4 h-4" />
+                  AI Research Engineer
                 </span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-                Hi, I'm{" "}
-                <span className="gradient-text">
-                  Josh Baradia
+                <span className="block text-foreground">Building the Future of</span>
+                <span className="gradient-text block mt-2">
+                  Artificial Intelligence
                 </span>
               </h1>
               
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-muted-foreground">
-                AI Researcher | Technologist | ML Enthusiast
+                Advancing AI through Deep Learning, Neural Networks & LLMs
               </h2>
             </div>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Engineer and researcher, passionate about machine intelligence and innovation. 
-              Bridging technology and business to build impactful AI solutions.
+              Specializing in cutting-edge AI research, from transformer architectures to neural network optimization. 
+              Developing intelligent systems that push the boundaries of machine learning and artificial intelligence.
             </p>
+
+            {/* AI/ML Technology Stack */}
+            <div className="flex flex-wrap gap-3 pt-4">
+              {[
+                { icon: Brain, text: "Neural Networks" },
+                { icon: Cpu, text: "Deep Learning" },
+                { icon: Database, text: "Computer Vision" },
+                { icon: Network, text: "NLP & LLMs" }
+              ].map((tech, index) => (
+                <div 
+                  key={tech.text}
+                  className="flex items-center gap-2 px-3 py-2 bg-secondary/50 backdrop-blur-sm rounded-full text-sm font-medium border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
+                  style={{animationDelay: `${index * 0.1}s`}}
+                >
+                  <tech.icon className="w-4 h-4 text-primary" />
+                  <span>{tech.text}</span>
+                </div>
+              ))}
+            </div>
             
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-6">
               <Button 
                 onClick={() => {
                   const projectsSection = document.getElementById("projects");
@@ -48,19 +86,22 @@ const Hero = () => {
                   }
                 }} 
                 size="lg"
-                className="group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary hover:bg-primary/90 transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-primary hover:bg-primary/90 transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
               >
-                Explore My Work 
+                <Brain className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                Explore AI Research
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
               </Button>
             </div>
 
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4 pt-6">
               <a 
                 href="https://www.linkedin.com/in/josh-baradia-158637157/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50"
+                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50 neural-glow"
+                onMouseEnter={() => setHoveredIcon('linkedin')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
                 <Linkedin size={20} />
               </a>
@@ -68,7 +109,9 @@ const Hero = () => {
                 href="#" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50"
+                className="p-3 rounded-full bg-secondary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 border border-border/50 neural-glow"
+                onMouseEnter={() => setHoveredIcon('github')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
                 <Github size={20} />
               </a>
