@@ -52,17 +52,37 @@ const Index = () => {
         }} />
       </div>
 
-      {/* Animated data particles */}
+      {/* Moving data ribbons */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
+            className="absolute h-2 bg-gradient-to-r from-transparent via-primary/20 to-transparent transform -rotate-12"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              width: '200%',
+              left: '-50%',
+              top: `${10 + i * 12}%`,
+              animationName: 'scroll-ribbon',
+              animationDuration: `${15 + i * 3}s`,
+              animationIterationCount: 'infinite',
+              animationTimingFunction: 'linear',
+              animationDelay: `${i * 2}s`
+            }}
+          />
+        ))}
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div
+            key={`reverse-${i}`}
+            className="absolute h-1 bg-gradient-to-r from-transparent via-blue-500/15 to-transparent transform rotate-12"
+            style={{
+              width: '180%',
+              left: '-40%',
+              top: `${15 + i * 15}%`,
+              animationName: 'scroll-ribbon-reverse',
+              animationDuration: `${20 + i * 2}s`,
+              animationIterationCount: 'infinite',
+              animationTimingFunction: 'linear',
+              animationDelay: `${i * 1.5}s`
             }}
           />
         ))}

@@ -4,35 +4,62 @@ const ExperienceItem = ({
   company,
   period,
   description,
-  delay
+  delay,
+  isVisible
 }: {
   title: string;
   company: string;
   period: string;
   description: string[];
   delay: number;
+  isVisible: boolean;
 }) => (
   <div 
-    className="relative pl-10 pb-10 animate-fade-in" 
+    className={`relative pl-16 pb-16 transition-all duration-700 transform hover:scale-105 hover:bg-secondary/20 rounded-lg p-6 cursor-pointer group ${
+      isVisible ? 'animate-fade-in opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}
     style={{ animationDelay: `${delay}s` }}
   >
-    <div className="timeline-circle"></div>
-    <div className="mb-1">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="text-primary font-medium">{company}</p>
-      <p className="text-sm text-muted-foreground mb-2">{period}</p>
+    <div className="timeline-circle group-hover:scale-125 transition-transform duration-300"></div>
+    <div className="glass-card p-6 border border-border/50 hover:border-primary/30 transition-all duration-300">
+      <div className="mb-4">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{title}</h3>
+        <p className="text-primary font-semibold text-lg">{company}</p>
+        <p className="text-muted-foreground font-medium">{period}</p>
+      </div>
+      <ul className="list-disc pl-5 space-y-3">
+        {description.map((item, index) => (
+          <li key={index} className="text-muted-foreground leading-relaxed">
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className="list-disc pl-5 space-y-2">
-      {description.map((item, index) => (
-        <li key={index} className="text-muted-foreground">
-          {item}
-        </li>
-      ))}
-    </ul>
   </div>
 );
 
 const Experience = () => {
+  const [visibleItems, setVisibleItems] = React.useState<Set<number>>(new Set());
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleItems(prev => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const items = document.querySelectorAll('.experience-item');
+    items.forEach(item => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
   const experiences = [
     {
       title: "Associate Software Engineer",
@@ -83,22 +110,42 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="section">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center"><span className="text-primary">💼 </span>Professional Experience</h2>
+    <section id="experience" className="min-h-screen section bg-gradient-to-br from-secondary/20 to-background relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-blue-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: "1s"}}></div>
+      </div>
+
+      <div className="container mx-auto relative z-10 py-20">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="text-primary">💼 </span>
+            <span className="gradient-text">Professional Experience</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Journey through AI research, machine learning development, and cutting-edge technology implementations
+          </p>
+        </div>
         
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <div className="timeline-line"></div>
           
           {experiences.map((exp, index) => (
-            <ExperienceItem
+            <div 
               key={index}
-              title={exp.title}
-              company={exp.company}
-              period={exp.period}
-              description={exp.description}
-              delay={exp.delay}
-            />
+              className="experience-item"
+              data-index={index}
+            >
+              <ExperienceItem
+                title={exp.title}
+                company={exp.company}
+                period={exp.period}
+                description={exp.description}
+                delay={exp.delay}
+                isVisible={visibleItems.has(index)}
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -40,9 +40,9 @@ const Hero = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-                <span className="block text-foreground">Building the Future of</span>
+                <span className="block text-foreground">Josh</span>
                 <span className="gradient-text block mt-2">
-                  Artificial Intelligence
+                  Baradia
                 </span>
               </h1>
               
