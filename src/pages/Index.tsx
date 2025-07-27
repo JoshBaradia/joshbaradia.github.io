@@ -41,11 +41,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-x-hidden">
-      {/* 3D Background Scene */}
-      <div className="fixed inset-0 z-0">
-        <Scene3D scrollProgress={scrollProgress} section={currentSection} />
-      </div>
-
       {/* Subtle data grid overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute inset-0" style={{

@@ -11,10 +11,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Interactive 3D background */}
-      <div className="absolute inset-0 z-0">
-        <Scene3D scrollProgress={0} section="hero" interactive={true} />
-      </div>
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5"></div>
 
       {/* Neural network pattern overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
