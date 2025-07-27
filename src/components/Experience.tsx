@@ -120,7 +120,7 @@ const Experience = () => {
       <div className="container mx-auto relative z-10 py-20">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-primary">💼 </span>
+{/*             <span className="text-primary">💼 </span> */}
             <span className="gradient-text">Professional Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
