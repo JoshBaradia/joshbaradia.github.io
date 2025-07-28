@@ -119,9 +119,9 @@ const Index = () => {
                 key={i}
                 className={`absolute curvy-ribbon ribbon-${direction}`}
                 style={{
-                  background: `linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.4) 20%, hsl(var(--primary) / 0.2) 50%, hsl(var(--primary) / 0.4) 80%, transparent 100%)`,
-                  width: direction.includes('left') || direction.includes('right') ? '120%' : '2px',
-                  height: direction.includes('top') || direction.includes('bottom') ? '120%' : '1px',
+                  background: `linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.6) 20%, hsl(var(--primary) / 0.4) 50%, hsl(var(--primary) / 0.6) 80%, transparent 100%)`,
+                  width: direction.includes('left') || direction.includes('right') ? '120%' : '4px',
+                  height: direction.includes('top') || direction.includes('bottom') ? '120%' : '3px',
                   borderRadius: '50px',
                   animationDelay: `${randomDelay}s`,
                   clipPath: direction.includes('left') || direction.includes('right') 
