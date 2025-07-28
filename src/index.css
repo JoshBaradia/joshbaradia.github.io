@@ -310,21 +310,80 @@
   }
 }
 
-/* Scroll-based ribbon animations */
-@keyframes scroll-ribbon {
+/* Scroll-triggered curvy ribbon animations */
+.curvy-ribbon {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.curvy-ribbon.active {
+  opacity: 1;
+}
+
+@keyframes scroll-ribbon-left {
   0% {
-    transform: translateX(-100%) rotate(-12deg);
+    left: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(100%) rotate(-12deg);
+    left: 100%;
+    opacity: 0;
   }
 }
 
-@keyframes scroll-ribbon-reverse {
+@keyframes scroll-ribbon-right {
   0% {
-    transform: translateX(100%) rotate(12deg);
+    right: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translateX(-100%) rotate(12deg);
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-ribbon-down {
+  0% {
+    top: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-ribbon-up {
+  0% {
+    bottom: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
   }
 }
