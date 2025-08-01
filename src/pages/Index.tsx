@@ -125,8 +125,8 @@ const Index = () => {
                   borderRadius: '50px',
                   animationDelay: `${randomDelay}s`,
                   clipPath: direction.includes('left') || direction.includes('right') 
-                    ? 'polygon(0% 45%, 100% 55%, 100% 45%, 0% 55%)' 
-                    : 'polygon(45% 0%, 55% 100%, 45% 100%, 55% 0%)',
+                    ? 'ellipse(60% 40% at 50% 50%)' 
+                    : 'ellipse(40% 60% at 50% 50%)',
                   ...getDirectionStyles(direction, i)
                 }}
               />
