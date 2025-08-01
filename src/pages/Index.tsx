@@ -20,33 +20,29 @@ const getDirectionStyles = (direction: string, index: number) => {
       return {
         ...baseStyles,
         top: `${20 + index * 15}%`,
-        left: '-150%',
-        transform: 'rotate(-5deg)',
-        animation: 'scroll-ribbon-left 8s linear infinite'
+        left: '10%',
+        transform: 'rotate(-5deg)'
       };
     case 'right-left':
       return {
         ...baseStyles,
         top: `${30 + index * 20}%`,
-        right: '-150%',
-        transform: 'rotate(5deg)',
-        animation: 'scroll-ribbon-right 10s linear infinite'
+        right: '10%',
+        transform: 'rotate(5deg)'
       };
     case 'top-bottom':
       return {
         ...baseStyles,
         left: `${25 + index * 20}%`,
-        top: '-150%',
-        transform: 'rotate(45deg)',
-        animation: 'scroll-ribbon-down 12s linear infinite'
+        top: '10%',
+        transform: 'rotate(45deg)'
       };
     case 'bottom-top':
       return {
         ...baseStyles,
         right: `${15 + index * 25}%`,
-        bottom: '-150%',
-        transform: 'rotate(-45deg)',
-        animation: 'scroll-ribbon-up 9s linear infinite'
+        bottom: '10%',
+        transform: 'rotate(-45deg)'
       };
     default:
       return baseStyles;
@@ -56,20 +52,10 @@ const getDirectionStyles = (direction: string, index: number) => {
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [currentSection, setCurrentSection] = useState<'hero' | 'about' | 'experience' | 'projects' | 'skills'>('hero');
-  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-    
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      setScrolling(true);
-      
-      // Clear timeout and set scrolling to false after scrolling stops
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setScrolling(false);
-      }, 150);
       
       // Determine current section based on scroll position
       const sections = ['hero', 'about', 'experience', 'projects', 'skills'] as const;
@@ -82,7 +68,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollTimeout);
     };
   }, [scrollY]);
 
@@ -106,34 +91,30 @@ const Index = () => {
         }} />
       </div>
 
-      {/* Curvy scroll-triggered ribbons */}
-      {scrolling && (
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          {Array.from({ length: 5 }).map((_, i) => {
-            const directions = ['left-right', 'right-left', 'top-bottom', 'bottom-top'];
-            const direction = directions[i % 4];
-            const randomDelay = Math.random() * 2;
-            
-            return (
-              <div
-                key={i}
-                className={`absolute curvy-ribbon ribbon-${direction}`}
-                style={{
-                  background: `linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.8) 20%, hsl(var(--primary) / 0.6) 50%, hsl(var(--primary) / 0.8) 80%, transparent 100%)`,
-                  width: direction.includes('left') || direction.includes('right') ? '120%' : '6px',
-                  height: direction.includes('top') || direction.includes('bottom') ? '120%' : '5px',
-                  borderRadius: '50px',
-                  animationDelay: `${randomDelay}s`,
-                  clipPath: direction.includes('left') || direction.includes('right') 
-                    ? 'ellipse(60% 40% at 50% 50%)' 
-                    : 'ellipse(40% 60% at 50% 50%)',
-                  ...getDirectionStyles(direction, i)
-                }}
-              />
-            );
-          })}
-        </div>
-      )}
+      {/* Static curvy ribbons */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 5 }).map((_, i) => {
+          const directions = ['left-right', 'right-left', 'top-bottom', 'bottom-top'];
+          const direction = directions[i % 4];
+          
+          return (
+            <div
+              key={i}
+              className={`absolute curvy-ribbon ribbon-${direction}`}
+              style={{
+                background: `linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.3) 20%, hsl(var(--primary) / 0.2) 50%, hsl(var(--primary) / 0.3) 80%, transparent 100%)`,
+                width: direction.includes('left') || direction.includes('right') ? '80%' : '4px',
+                height: direction.includes('top') || direction.includes('bottom') ? '80%' : '3px',
+                borderRadius: '50px',
+                clipPath: direction.includes('left') || direction.includes('right') 
+                  ? 'ellipse(60% 40% at 50% 50%)' 
+                  : 'ellipse(40% 60% at 50% 50%)',
+                ...getDirectionStyles(direction, i)
+              }}
+            />
+          );
+        })}
+      </div>
       
       {/* Content */}
       <div className="relative z-10">
