@@ -109,6 +109,10 @@ const Index = () => {
                 clipPath: direction.includes('left') || direction.includes('right') 
                   ? 'ellipse(60% 40% at 50% 50%)' 
                   : 'ellipse(40% 60% at 50% 50%)',
+                animation: direction.includes('left') || direction.includes('right') 
+                  ? `drift-horizontal ${20 + i * 5}s ease-in-out infinite`
+                  : `drift-vertical ${18 + i * 4}s ease-in-out infinite`,
+                animationDelay: `${i * 3}s`,
                 ...getDirectionStyles(direction, i)
               }}
             />
