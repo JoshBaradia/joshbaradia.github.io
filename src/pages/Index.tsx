@@ -12,42 +12,6 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Scene3D from "../components/3d/Scene3D";
 
-const getDirectionStyles = (direction: string, index: number) => {
-  const baseStyles: React.CSSProperties = {};
-  
-  switch (direction) {
-    case 'left-right':
-      return {
-        ...baseStyles,
-        top: `${20 + index * 15}%`,
-        left: '10%',
-        transform: 'rotate(-5deg)'
-      };
-    case 'right-left':
-      return {
-        ...baseStyles,
-        top: `${30 + index * 20}%`,
-        right: '10%',
-        transform: 'rotate(5deg)'
-      };
-    case 'top-bottom':
-      return {
-        ...baseStyles,
-        left: `${25 + index * 20}%`,
-        top: '10%',
-        transform: 'rotate(45deg)'
-      };
-    case 'bottom-top':
-      return {
-        ...baseStyles,
-        right: `${15 + index * 25}%`,
-        bottom: '10%',
-        transform: 'rotate(-45deg)'
-      };
-    default:
-      return baseStyles;
-  }
-};
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -91,33 +55,44 @@ const Index = () => {
         }} />
       </div>
 
-      {/* Static curvy ribbons */}
+      {/* Dynamic floating particles */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        {Array.from({ length: 5 }).map((_, i) => {
-          const directions = ['left-right', 'right-left', 'top-bottom', 'bottom-top'];
-          const direction = directions[i % 4];
-          
-          return (
-            <div
-              key={i}
-              className={`absolute curvy-ribbon ribbon-${direction}`}
-              style={{
-                background: `linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.3) 20%, hsl(var(--primary) / 0.2) 50%, hsl(var(--primary) / 0.3) 80%, transparent 100%)`,
-                width: direction.includes('left') || direction.includes('right') ? '80%' : '4px',
-                height: direction.includes('top') || direction.includes('bottom') ? '80%' : '3px',
-                borderRadius: '50px',
-                clipPath: direction.includes('left') || direction.includes('right') 
-                  ? 'ellipse(60% 40% at 50% 50%)' 
-                  : 'ellipse(40% 60% at 50% 50%)',
-                animation: direction.includes('left') || direction.includes('right') 
-                  ? `drift-horizontal ${20 + i * 5}s ease-in-out infinite`
-                  : `drift-vertical ${18 + i * 4}s ease-in-out infinite`,
-                animationDelay: `${i * 3}s`,
-                ...getDirectionStyles(direction, i)
-              }}
-            />
-          );
-        })}
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float-gentle opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${4 + Math.random() * 8}px`,
+              height: `${4 + Math.random() * 8}px`,
+              background: `hsl(var(--primary) / ${0.3 + Math.random() * 0.4})`,
+              borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+              animationDelay: `${Math.random() * 10}s`,
+              animationDuration: `${15 + Math.random() * 20}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Dynamic gradient orbs */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-pulse opacity-20"
+            style={{
+              left: `${20 + i * 30}%`,
+              top: `${20 + i * 25}%`,
+              width: `${100 + i * 50}px`,
+              height: `${100 + i * 50}px`,
+              background: `radial-gradient(circle, hsl(var(--primary) / 0.4) 0%, transparent 70%)`,
+              borderRadius: '50%',
+              animationDelay: `${i * 2}s`,
+              animationDuration: `${8 + i * 2}s`,
+            }}
+          />
+        ))}
       </div>
       
       {/* Content */}

@@ -310,34 +310,14 @@
   }
 }
 
-/* Constant slow ribbon animations */
-.curvy-ribbon {
-  opacity: 1;
-}
-
-@keyframes drift-horizontal {
-  0%, 100% {
-    transform: translateX(0px) translateY(0px);
-  }
-  50% {
-    transform: translateX(30px) translateY(-15px);
-  }
-}
-
-@keyframes drift-vertical {
-  0%, 100% {
-    transform: translateX(0px) translateY(0px);
-  }
-  50% {
-    transform: translateX(-15px) translateY(30px);
-  }
-}
-
+/* Dynamic background animations */
 @keyframes float-gentle {
   0%, 100% {
-    transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.3;
   }
   50% {
-    transform: translateY(-20px) scale(1.05);
+    transform: translateY(-20px) scale(1.1) rotate(180deg);
+    opacity: 0.6;
   }
 }
