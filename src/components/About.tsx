@@ -14,10 +14,10 @@ const About = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12 lg:mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 mb-4 flex items-center gap-2 w-fit mx-auto">
+{/*           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 mb-4 flex items-center gap-2 w-fit mx-auto">
             <Brain className="w-4 h-4" />
             AI Research Engineer
-          </span>
+          </span> */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">Advancing AI Through Research</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-4 leading-relaxed">
             Specialized in cutting-edge artificial intelligence research and development
